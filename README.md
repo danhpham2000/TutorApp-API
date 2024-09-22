@@ -81,3 +81,10 @@ In addition to the core functionality, we plan to add:
 - npm or Yarn
 - MongoDB Atlas account for database access
 - Auth0 account for authentication
+
+### Installation
+   ```bash
+   git clone https://github.com/yourusername/tutortap.git
+   cd tutortap
+   npm install
+   ```
