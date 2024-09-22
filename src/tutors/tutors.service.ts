@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Tutor } from './tutor.model';
 import { TutorDto } from 'src/dto';
+import * as argon from 'argon2';
 
 @Injectable()
 export class TutorsService {
@@ -24,16 +25,17 @@ export class TutorsService {
   }
 
   async createTutor(tutorDto: TutorDto) {
+    const hashedPassword = argon.hash(tutorDto.password);
     try {
       const newTutor = new this.tutorModel({
         firstName: tutorDto.firstName,
         lastName: tutorDto.lastName,
         email: tutorDto.email,
-        password: tutorDto.password,
+        password: hashedPassword,
         role: 'tutor',
         createdAt: Date.now(),
         description: tutorDto.description,
-        schoolGraduated: tutorDto.schoolGraduated,
+        school: tutorDto.school,
       });
       return await newTutor.save();
     } catch (err) {

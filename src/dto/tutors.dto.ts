@@ -6,5 +6,5 @@ export class TutorDto {
   description: string;
   createdAt: Date;
   role: string;
-  schoolGraduated: string;
+  school: string;
 }

@@ -6,7 +6,7 @@ export const TutorSchema = new mongoose.Schema({
   bio: { type: String },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  schoolGraduated: { type: String, required: true },
+  school: { type: String, required: true },
   role: { type: String, required: true },
   createdAt: { type: Date },
 });
@@ -20,5 +20,5 @@ export interface Tutor extends mongoose.Document {
   password: string;
   role: string;
   createdAt: Date;
-  schoolGraduated: string;
+  school: string;
 }
