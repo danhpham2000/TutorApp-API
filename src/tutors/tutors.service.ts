@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Tutor } from './tutor.model';
@@ -16,7 +16,7 @@ export class TutorsService {
   }
 
   async getTutor(tutorId: string) {
-    const tutor = await this.tutorModel.findById(tutorId);
+    const tutor = await this.tutorModel.findById(tutorId).exec();
     if (!tutor) {
       throw new Error('No tutor found');
     }
@@ -43,13 +43,27 @@ export class TutorsService {
 
   async updateTutor(tutorDto: TutorDto, tutorId: string) {
     try {
-      const tutor = await this.tutorModel.findById(tutorId);
+      const tutor = await this.tutorModel.findById(tutorId).exec();
       if (!tutor) {
         throw new Error('no tutor found');
       }
       tutor.firstName = tutorDto.firstName;
       tutor.lastName = tutorDto.lastName;
       tutor.email = tutorDto.email;
+      tutor.description = tutorDto.description;
+      return await tutor.save();
+    } catch (err) {
+      return err;
+    }
+  }
+
+  async deleteTutor(tutorId: string) {
+    try {
+      const tutor = await this.tutorModel.findById({ _id: tutorId }).exec();
+      if (!tutor) {
+        throw new NotFoundException('Tutor not found');
+      }
+      return await this.tutorModel.deleteOne({ _id: tutorId }).exec();
     } catch (err) {
       return err;
     }

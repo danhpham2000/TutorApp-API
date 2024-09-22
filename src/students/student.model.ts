@@ -9,3 +9,15 @@ export const StudentSchema = new mongoose.Schema({
   school: { type: String, required: true },
   role: { type: String, required: true },
 });
+
+export interface Student extends mongoose.Document {
+  id: string;
+  firstName: string;
+  lastName: string;
+  description: string;
+  email: string;
+  password: string;
+  role: string;
+  createdAt: Date;
+  school: string;
+}

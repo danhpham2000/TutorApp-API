@@ -5,4 +5,6 @@ export class StudentDto {
   password: string;
   description: string;
   createdAt: Date;
+  role: string;
+  school: string;
 }

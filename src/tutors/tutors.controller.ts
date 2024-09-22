@@ -1,4 +1,14 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { TutorsService } from './tutors.service';
 import { TutorDto } from 'src/dto';
 
@@ -22,7 +32,14 @@ export class TutorsController {
   }
 
   @Put(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
   async updateTutor(@Body() tutorDto: TutorDto, @Param('id') tutorId: string) {
     return await this.tutorService.updateTutor(tutorDto, tutorId);
+  }
+
+  @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  async deleteTutor(@Param('id') tutorId: string) {
+    return await this.tutorService.deleteTutor(tutorId);
   }
 }
