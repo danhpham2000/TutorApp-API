@@ -1,73 +1,83 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# TutorTap
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+TutorTap is a platform designed to connect university students with tutors in a more efficient and streamlined way. The inspiration for the project comes from the common challenges faced by students in finding timely and reliable academic help. TutorTap aims to bridge that gap by providing an easy-to-use solution for students and tutors alike.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Inspiration
 
-## Description
+The idea for TutorTap was inspired by the difficulty many students face in accessing help for their university courses. Our goal was to create a tool that makes it easier to connect with tutors, speeding up the process and providing a more effective learning experience.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## What It Does
 
-## Installation
+TutorTap connects tutors and students, allowing them to interact more efficiently. The platform offers:
 
-```bash
-$ npm install
-```
+- **Student and Tutor Sign-up:** Separate registration flows for students and tutors.
+- **Find Tutors:** A search function for students to quickly find available tutors based on subjects or areas of expertise.
+- **Login and Authentication:** Secure login using Auth0 for easy access.
+- **Future Enhancements:** Video chat and messaging functionality for real-time interaction between students and tutors (in progress).
 
-## Running the app
+## Tech Stack
 
-```bash
-# development
-$ npm run start
+- **Frontend:** React, React Bootstrap
+- **Backend:** NestJS, MongoDB Atlas
+- **Authentication:** Auth0
+- **Database:** MongoDB Atlas (Cloud)
+- **API Testing:** Postman
 
-# watch mode
-$ npm run start:dev
+## How We Built It
 
-# production mode
-$ npm run start:prod
-```
+The application is built using a combination of technologies to provide a seamless user experience:
 
-## Test
+- **Frontend:** Built with React and styled using React Bootstrap. The frontend is designed to offer intuitive navigation with clear separation between student and tutor user interfaces.
+- **Backend:** The backend is powered by NestJS, handling API requests and database operations. MongoDB Atlas is used for data storage.
+- **Authentication:** We integrated Auth0 for secure user authentication, including role-based access control (students and tutors).
+- **Database:** Collections for students and tutors are set up and tested using Postman API.
 
-```bash
-# unit tests
-$ npm run test
+## Challenges We Ran Into
 
-# e2e tests
-$ npm run test:e2e
+While developing TutorTap, we encountered several challenges:
 
-# test coverage
-$ npm run test:cov
-```
+- **Merge Conflicts:** Managing and resolving code conflicts during the collaborative development process.
+- **Project Incompletion:** At this stage, the backend is 75% complete, and the frontend is 90% done. We still need to connect the two layers via APIs.
+- **Feature Development:** We are missing some key features, including profile pages and complete API communication between frontend and backend.
 
-## Support
+## Accomplishments We're Proud Of
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- **Team Collaboration:** Despite the challenges, we successfully connected with each other and worked as a team in our first Hackathon.
+- **Learning:** We gained hands-on experience with new technologies, including Auth0 and MongoDB Atlas, which was invaluable for our growth as developers.
+- **Building Something New:** This was our first hackathon, and we’re proud of the progress we made, even though the project isn't fully complete yet.
 
-## Stay in touch
+## What We Learned
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Throughout this project, we learned:
 
-## License
+- How to integrate **Auth0** for authentication and role-based access.
+- The basics of working with **MongoDB Atlas** for cloud database storage.
+- Frontend development using **React**, as well as how to structure and style pages with **React Bootstrap**.
 
-Nest is [MIT licensed](LICENSE).
+## Next Steps for TutorTap
+
+Our roadmap includes the following enhancements:
+
+- **Profile Pages:** Implement profile pages for both students and tutors, allowing them to showcase their details and expertise.
+- **API Integration:** Complete the API communication between the frontend and backend. Currently, CORS has been enabled in the backend, but the connection is not yet functional.
+- **API Authentication & Protection:** Finalize the NestJS backend, including authentication using Auth0 to protect API routes.
+- **Video Chat & Messaging:** Implement real-time interaction features, including video chat and a message box for seamless communication between students and tutors.
+- **Testing:** Conduct further testing with Auth0, including verifying API authentication, audience keys, and full integration of security layers.
+
+## Future Enhancements
+
+In addition to the core functionality, we plan to add:
+
+- **Advanced Search Features:** Enhance the search functionality with filters for subject expertise, tutor availability, and more.
+- **Rating System:** Implement a rating and feedback system for students to rate their tutoring sessions.
+- **Calendar Integration:** Allow tutors and students to schedule sessions and sync with their calendars.
+- **Mobile App:** Explore the potential for a mobile app version of TutorTap for on-the-go access.
+
+## How to Run the Project Locally
+
+### Prerequisites
+
+- Node.js (>= 16.x)
+- npm or Yarn
+- MongoDB Atlas account for database access
+- Auth0 account for authentication
